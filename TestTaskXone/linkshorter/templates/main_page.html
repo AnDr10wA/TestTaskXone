@@ -2,12 +2,13 @@
 
 
 {% block content %}
+ <div class="container px-4 py-5" id="hanging-icons">
 <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit">Сократить</button>
 </form>
 
-
+ </div>
 
 {% endblock %}

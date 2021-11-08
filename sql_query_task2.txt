@@ -1,0 +1,13 @@
+#Task 1:
+select bid.client_number, count(IF(outcome = 'lose', 1, NULL)) 'Lose',
+count(IF(outcome = 'win', 1, NULL)) 'Win' from event_value
+inner join bid on event_value.play_id = bid.play_id
+group by bid.client_number;
+
+#Task 2:
+
+SELECT home_team, away_team, COUNT(away_team) AS games_count
+FROM event_entity
+GROUP BY home_team, away_team
+HAVING COUNT(away_team)
+ORDER BY games_count ASC;
